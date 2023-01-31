@@ -1,0 +1,68 @@
+Now that we can connect our python application to our DB, let's go ahead and create a strange application! This application will allow users to create blog posts from their terminal and see posts as well!
+
+ 
+
+REMEMBER TO COMMENT YOUR CODE
+REMEMBER TO CREATE YOUR .GITIGNORE
+
+ 
+
+Create a new Git/GitHub repository
+
+Create the following local DB schema:
+
+client
+id (PK)
+username (unique)
+joined_on
+password
+post
+id(PK)
+client_id (FK)
+content
+title
+INSERT at least 3 clients and 5 posts
+
+Once you have the DB created you can start the python application:
+
+Before you start coding, make sure your debugger, venv and .gitignore are all in place already
+Create an app.py file that achieves the following:
+Create a function that will:
+Ask the user for their username and password
+Check with the DB a user with that username / password combo exist.
+This is a procedure that contains a select query!
+Return the id of the client if they do exist
+Return None (python's version of undefined) if they do not exist
+Create a function that will:
+Accept a client id as an argument
+Prompt the user to type a title and content for a post
+Put that new post into the DB
+This is a procedure that contains an insert query!
+Create a function that will:
+Retrieve all posts from the DB
+Print out each post's title and content to the console
+Create a function that will:
+Attempt to log the user in
+Loop infinitely
+
+Ask the user if they would like to insert a new post, 
+read all posts or quit (select 1, 2 or 3)
+
+Call the correct function based on their choice
+Call the function that kicks off the loop
+ 
+
+Take a full backup of the DB
+
+Add, commit and push your code. REMEMBER NOT TO ADD THE credentials FILE!
+
+HINTS:
+
+If a user with a specific username and password exist, the length of the list sent back
+from the select procedure will be 1, otherwise will be 0
+Break the assignment into 3 parts, making the DB, coding the procedures and coding the python
+BONUS:
+
+Give the user an option to see only posts made by them
+Give an option that will show all the usernames in the system
+Give the user an option to only see posts made by a user of their choice
